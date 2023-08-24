@@ -1,0 +1,16 @@
+.hide {
+  display: none;
+}
+label {
+  white-space: pre-wrap;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.clickable:hover{
+  cursor: pointer;
+  font-size:125%;
+}

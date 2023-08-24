@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Insight-Materials Calculator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container-fluid mt-3 text-center">
+        <!--   header buttons  -->
+        <h1>MATERIAL CALCULATOR</h1>
+        <nav class="d-flex navbar mt-1">
+            <div class="container-fluid text-center">
+                <div id="rubbleClick" class="clickable m-1 border border-1 rounded col col bg-primary text-white fs-4">
+                    RUBBLE
+                </div>
+                <div id="blockWorkClick" class="clickable m-1 border border-1 rounded col bg-dark text-white fs-4">
+                    BLOCKWORK</div>
+            </div>
+            <div class="container-fluid text-center">
+                <div id="rccClick" class="clickable m-1 border border-1 rounded col bg-dark text-white fs-4">RCC </div>
+                <div id="plasteringClick" class="clickable m-1 border border-1 rounded col bg-dark text-white fs-4">
+                    PLASTERING</div>
+            </div>
+        </nav>
+
+
+
+        <!--  -->
+        <!--  Rubble work div -->
+        <div id="rubbleDiv" class=" container-fluid border-primary-subtle border-1 pt-3 pb-3 bg-primary-subtle">
+            <!--bg-success-subtle-->
+            <div class="row">
+                <div class="form-group col m-1">
+                    <label for="rwL" class="control-label pb-3">Length</label>
+                    <input type="number" class="form-control inputtxt Linput" placeholder="Length">
+
+                </div>
+                <div class="form-group col m-1">
+                    <label for="rwW" class="control-label pb-3">Width</label>
+                    <input type="number" class="form-control inputtxt Winput" placeholder="Width">
+
+                </div>
+                <div class="form-group col m-1">
+                    <label for="rwH" class="control-label pb-3">Height</label>
+                    <input type="number" class="form-control inputtxt Hinput" placeholder="Height">
+
+                </div>
+            </div>
+            <!-- <div class="row mt-1">
+                <div class="form-group col m-1">
+                    <label for="BrickSize" class="control-label pb-1">Ratio</label>
+                    <select class="form-select form-select-xs mb-1" id="BrickSize">
+                        <option value="1">1:3</option>
+                        <option value="2">1:4</option>
+                        <option value="3">1:5</option>
+                        <option value="4">1:6</option>
+                        <option value="5">1:7</option>
+                        <option value="6">1:8</option>
+                    </select>
+                </div>
+            </div> -->
+            <div class="row">
+                <div class="form-group">
+                    <label for="unitOfRubble" class="control-label pb-1">Rubble(cft)</label>
+                    <input type="text" class="form-control" id="unitOfRubble" readonly>
+                </div>
+                <!-- <div class="form-group">
+                    <label for="cementBags" class="control-label pb-1">Cement(50kg bag)</label>
+                    <input type="text" class="form-control" id="cementBags" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="Sand" class="control-label pb-1">Msand(cft)</label>
+                    <input type="text" class="form-control" id="Sand" readonly>
+                </div> -->
+
+            </div>
+        </div>
+
+
+        <!-- Block work div -->
+        <div id="blockWorkDiv" class=" container-fluid border-primary-subtle border-1 pt-3 pb-3 bg-primary-subtle hide">
+            <!-- bg-info-subtle -->
+            <div class="row">
+                <div class="form-group col m-1">
+                    <label for="bwL" class="control-label pb-3">Length</label>
+                    <input type="number" class="form-control inputtxt Linput" placeholder="Length">
+                </div>
+                <div class="form-group col m-1">
+                    <label for="bwW" class="control-label pb-3">Width</label>
+                    <input type="number" class="form-control inputtxt Winput" placeholder="Width">
+                </div>
+                <div class="form-group col m-1">
+                    <label for="bwH" class="control-label pb-3">Height</label>
+                    <input type="number" class="form-control inputtxt Hinput" placeholder="Height">
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col m-1">
+                    <label for="BrickSize" class="control-label pb-1">Bricks</label>
+                    <select class="form-select form-select-xs mb-1" id="BrickSize">
+                        <option value="1">Red Bricks 8" x 4" x 4"</option>
+                        <option value="2">Red Bricks 8" x 4" x 3"</option>
+                        <option value="3">Cement Solid Block 12"x 8" x 6"</option>
+                        <option value="4">Cement Solid Block 12"x 8" x 4"</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col m-1">
+                    <label for="bwRatio" class="control-label pb-1">Ratio</label>
+                    <select class="form-select form-select-xs mb-1" id="bwRatio">
+                        <option value="1">1:3</option>
+                        <option value="2">1:4</option>
+                        <option value="3">1:5</option>
+                        <option value="4">1:6</option>
+                        <option value="5">1:7</option>
+                        <option value="6">1:8</option>
+                    </select>
+                </div>
+                <div class="form-group col m-1">
+                    <label for="mortarThk" class="control-label pb-1">Thickness(mm)</label>
+                    <input type="number" class="form-control" id="mortarThk" value="12" placeholder="Thickness"
+                        required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group">
+                    <label for="NoOfBricks" class="control-label pb-1">Bricks</label>
+                    <input type="text" class="form-control " id="NoOfBricks" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="bwCementBags" class="control-label pb-1">Cement</label>
+                    <input type="text" class="form-control" id="bwCementBags" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="bwSand" class="control-label pb-1">Msand</label>
+                    <input type="text" class="form-control" id="bwSand" readonly>
+                </div>
+
+            </div>
+        </div>
+
+
+
+
+
+        <!-- rcc div -->
+        <div id="rccDiv" class=" container-fluid border-primary-subtle border-1 pt-3 pb-3 bg-primary-subtle hide">
+            <!--  -->
+            <div class="row">
+                <div class="form-group col m-1">
+                    <label for="bwL" class="control-label pb-3">Length</label>
+                    <input type="number" class="form-control inputtxt Linput" placeholder="Length">
+                </div>
+                <div class="form-group col m-1">
+                    <label for="bwW" class="control-label pb-3">Width</label>
+                    <input type="number" class="form-control inputtxt Winput" placeholder="Width">
+                </div>
+                <div class="form-group col m-1">
+                    <label for="bwH" class="control-label pb-3">Height</label>
+                    <input type="number" class="form-control inputtxt Hinput" placeholder="Height">
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-4 m-1">
+                    <label for="noOfEle" class="control-label pb-1">Number</label>
+                    <input type="number" class="form-control" id="noOfEle" value="1" placeholder="No of Elements">
+                </div>
+                <div class="form-group col m-1">
+                    <label for="element" class="control-label pb-1">Str Element</label>
+                    <select class="form-select form-select-xs mb-1" id="element">
+                        <option value="180">Beam</option>
+                        <option value="180">Neck Column</option>
+                        <option value="150">Columns</option>
+                        <option value="90">Slab</option>
+                        <option value="85">Lintel</option>
+                        <option value="85">Foundation</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col m-1">
+                    <label for="rccRatio" class="control-label pb-1">Grade</label>
+                    <select class="form-select form-select-xs mb-1" id="rccRatio">
+                        <option value="1">M5 (1:5:10)</option>
+                        <option value="2">M7.5 (1:4:8)</option>
+                        <option value="3">M10 (1:3:6)</option>
+                        <option value="4">M15 (1:2:4)</option>
+                        <option value="5">M20 (1:1.5:3)</option>
+                        <option value="6">M25 (1:1:2)</option>
+                    </select>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="form-group col">
+                    <label for="steelKg" class="control-label pb-1">Steel</label>
+                    <input type="text" class="form-control " id="steelKg" readonly>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col">
+                    <label for="rcccementBags" class="control-label pb-1">Cement</label>
+                    <!-- <input type="textarea" class="form-control" id="rcccementBags" rows="1" readonly> -->
+                    <input type="text" class="form-control" id="rcccementBags" readonly>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col">
+                    <label for="aggregates" class="control-label pb-1">Aggregates</label>
+                    <input type="text" class="form-control " id="aggregates" readonly>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col">
+                    <label for="sand" class="control-label pb-1">Sand</label>
+                    <input type="text" class="form-control" id="sand" readonly>
+                </div>
+            </div>
+
+
+        </div>
+
+
+
+
+        <!-- plastering div -->
+        <div id="plasteringDiv"
+            class=" container-fluid border-primary-subtle border-1 pt-3 pb-3 bg-primary-subtle hide">
+            <!--bg-secondary-subtle-->
+            <div class="row">
+                <div class="form-group col m-1">
+                    <label for="bwL" class="control-label pb-3 ">Length</label>
+                    <input type="number" class="form-control inputtxt Linput" placeholder="Length">
+                </div>
+                <div class="form-group col m-1">
+                    <label for="bwW" class="control-label pb-3">Width</label>
+                    <input type="number" class="form-control inputtxt Winput" placeholder="Width">
+                </div>
+                <!-- <div class="form-group col m-1">
+                    <label for="bwH" class="control-label pb-3">Height</label>
+                    <input type="number" class="form-control inputtxt Hinput" id="bwH" placeholder="Height">
+                </div> -->
+            </div>
+            <!-- <div class="row">
+                <div class="form-group col m-1">
+                    <label for="BrickSize" class="control-label pb-1">Bricks</label>
+                    <select class="form-select form-select-xs mb-1" id="BrickSize">
+                        <option value="1">Red Bricks</option>
+                        <option value="2">CSB 12"x 8" x 6"</option>
+                        <option value="3">CSB 12"x 8" x 4"</option>
+                    </select>
+                </div>
+            </div> -->
+            <div class="row">
+                <div class="form-group col m-1">
+                    <label for="plasteringRatio" class="control-label pb-1">Ratio</label>
+                    <select class="form-select form-select-xs mb-1" id="plasteringRatio">
+                        <option value="1">1:3</option>
+                        <option value="2">1:4</option>
+                        <option value="3">1:5</option>
+                        <option value="4">1:6</option>
+                        <option value="5">1:7</option>
+                        <option value="6">1:8</option>
+                    </select>
+                </div>
+                <div class="form-group col m-1">
+                    <label for="plasterThk" class="control-label pb-1">Thickness(mm)</label>
+                    <input type="number" class="form-control" value="12" id="plasterThk" placeholder="Thickness">
+                </div>
+            </div>
+            <div class="row">
+                <!-- <div class="form-group">
+                    <label for="NoOfBricks" class="control-label pb-1">Bricks(Nos)</label>
+                    <input type="number" class="form-control " id="NoOfBricks" readonly>
+                </div> -->
+                <div class="form-group">
+                    <label for="plasterCementBags" class="control-label pb-1">Cement</label>
+                    <input type="text" class="form-control" id="plasterCementBags" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="plasterSand" class="control-label pb-1">Msand</label>
+                    <input type="text" class="form-control" id="plasterSand" readonly>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
