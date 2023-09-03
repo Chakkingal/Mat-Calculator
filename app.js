@@ -243,6 +243,7 @@ function updateQty(divEle) {
         cmt = "";
       } else if (rccRatio === "5") {
         cementIncum = (concQty / 5.5) * 1;
+      
         aggPart = (concQty / 5.5) * 1.5;
         sandPart = (concQty / 5.5) * 3;
         cmt =
@@ -263,12 +264,20 @@ function updateQty(divEle) {
       document.querySelector("#steelKg").value = `${steelQty.toFixed(
         2
       )} Kg , ${(steelQty / 1000).toFixed(2)}(ton)`;
-      document.querySelector("#rcccementBags").value = `${cementIncum.toFixed(
-        2
-      )} CUM , ${(cementIncum * 1440).toFixed(2)} Kg , ${(
+
+// removed cubimeter qty of cement for mobile
+
+      document.querySelector("#rcccementBags").value = `${(cementIncum * 1440).toFixed(2)} Kg , ${(
         (cementIncum * 1440) /
         50
       ).toFixed(2)}(50 Kg Bags) ${cmt}`;
+
+      // cement with cubic meter 
+      // document.querySelector("#rcccementBags").value = `${cementIncum.toFixed(2)} CUM , ${(cementIncum * 1440).toFixed(2)} Kg , ${((cementIncum * 1440) /50).toFixed(2)}(50 Kg Bags) ${cmt}`;
+
+
+      
+
       document.querySelector("#aggregates").value = `${aggPart.toFixed(
         2
       )} CUM , ${(aggPart * 35.31466672).toFixed(2)} CFT , ${(
