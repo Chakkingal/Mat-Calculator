@@ -223,29 +223,32 @@ function updateQty(divEle) {
         document.querySelector("#noOfEle").value;
       if (rccRatio === "1") {
         cementIncum = (concQty / 16) * 1;
-        aggPart = (concQty / 16) * 5;
-        sandPart = (concQty / 16) * 10;
+        sandPart = (concQty / 16) * 5;
+        aggPart = (concQty / 16) * 10;
         cmt = "";
       } else if (rccRatio === "2") {
         cementIncum = (concQty / 13) * 1;
-        aggPart = (concQty / 13) * 4;
-        sandPart = (concQty / 13) * 8;
+        sandPart = (concQty / 13) * 4;
+        aggPart = (concQty / 13) * 8;
+
         cmt = "";
       } else if (rccRatio === "3") {
         cementIncum = (concQty / 10) * 1;
-        aggPart = (concQty / 10) * 3;
-        sandPart = (concQty / 10) * 6;
+        sandPart = (concQty / 10) * 3;
+        aggPart = (concQty / 10) * 6;
+
         cmt = "";
       } else if (rccRatio === "4") {
         cementIncum = (concQty / 7) * 1;
-        aggPart = (concQty / 7) * 2;
-        sandPart = (concQty / 7) * 4;
+        sandPart = (concQty / 7) * 2;
+        aggPart = (concQty / 7) * 4;
+
         cmt = "";
       } else if (rccRatio === "5") {
         cementIncum = (concQty / 5.5) * 1;
-      
-        aggPart = (concQty / 5.5) * 1.5;
-        sandPart = (concQty / 5.5) * 3;
+        sandPart = (concQty / 5.5) * 1.5;
+        aggPart = (concQty / 5.5) * 3;
+
         cmt =
           (
             parseFloat(qtyInCum) *
@@ -254,8 +257,9 @@ function updateQty(divEle) {
           ).toFixed(2) + "(as per local)";
       } else if (rccRatio === "6") {
         cementIncum = (concQty / 4) * 1;
-        aggPart = (concQty / 4) * 1;
-        sandPart = (concQty / 4) * 2;
+        sandPart = (concQty / 4) * 1;
+        aggPart = (concQty / 4) * 2;
+
         cmt = "";
       }
       cementIncum = parseFloat(cementIncum);
@@ -265,18 +269,16 @@ function updateQty(divEle) {
         2
       )} Kg , ${(steelQty / 1000).toFixed(2)}(ton)`;
 
-// removed cubimeter qty of cement for mobile
+      // removed cubimeter qty of cement for mobile
 
-      document.querySelector("#rcccementBags").value = `${(cementIncum * 1440).toFixed(2)} Kg , ${(
-        (cementIncum * 1440) /
-        50
-      ).toFixed(2)}(50 Kg Bags) ${cmt}`;
+      document.querySelector("#rcccementBags").value = `${(
+        cementIncum * 1440
+      ).toFixed(2)} Kg , ${((cementIncum * 1440) / 50).toFixed(
+        2
+      )}(50 Kg Bags) ${cmt}`;
 
-      // cement with cubic meter 
+      // cement with cubic meter
       // document.querySelector("#rcccementBags").value = `${cementIncum.toFixed(2)} CUM , ${(cementIncum * 1440).toFixed(2)} Kg , ${((cementIncum * 1440) /50).toFixed(2)}(50 Kg Bags) ${cmt}`;
-
-
-      
 
       document.querySelector("#aggregates").value = `${aggPart.toFixed(
         2
